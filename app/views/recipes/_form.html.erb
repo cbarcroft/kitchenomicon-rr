@@ -1,0 +1,33 @@
+<%= simple_form_for @recipe, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+  <%= f.input :title %>
+  <%= error_span(@recipe[:title]) %>
+  <%= f.input :description %>
+  <%= error_span(@recipe[:description]) %>
+
+  <%= f.input :photo, as: :file %>
+  <%= image_tag @recipe.photo.url(:thumb) %>
+
+    <!-- Ingredients -->
+    <div id="ingredients">
+      <%= f.simple_fields_for :ingredients do |ingredient| %>
+          <%= render 'ingredient_fields', :f => ingredient%>
+      <% end %>
+    </div>
+    <div class="links">
+      <%= link_to_add_association 'Add Ingredient', f, :ingredients, class: 'btn btn-default' %>
+    </div>
+
+    <!-- Instructions -->
+    <div id="instructions">
+      <%= f.simple_fields_for :instructions do |instruction| %>
+          <%= render 'instruction_fields', :f => instruction%>
+      <% end %>
+    </div>
+    <div class="links">
+      <%= link_to_add_association 'Add Instruction', f, :instructions, class: 'btn btn-default' %>
+    </div>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                recipes_path, :class => 'btn btn-default' %>
+<% end %>

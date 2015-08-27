@@ -1,0 +1,27 @@
+<div class="row nested-fields">
+  <div class="col-xs-3">
+    <div class="form-group">
+      <%= f.input :amount, label: 'Amount', input_html: { class: 'form-control' } %>
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <div class="form-group">
+      <%= f.input :unit, label: 'Unit', input_html: { class: 'form-control' } %>
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <div class="form-group">
+      <%= f.input :item, label: 'Item', input_html: { class: 'form-control' } %>
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <div class="form-group">
+      <%= f.input :text, label: 'Text', input_html: { class: 'form-control' } %>
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <div class="form-group center">
+      <%= link_to_remove_association('Delete', f) %>
+    </div>
+  </div>
+</div>
