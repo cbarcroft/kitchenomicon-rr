@@ -2,3 +2,16 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.recipe-list {
+    list-style-type: none;
+}
+
+.recipe-box {
+    height: 200px;
+    padding: 10px
+}
+
+.recipe-box:hover {
+    background: #f6f6f6;
+}

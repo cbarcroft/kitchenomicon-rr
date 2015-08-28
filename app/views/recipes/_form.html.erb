@@ -3,6 +3,8 @@
   <%= error_span(@recipe[:title]) %>
   <%= f.input :description %>
   <%= error_span(@recipe[:description]) %>
+  <%= f.input :published %>
+  <%= error_span(@recipe[:published]) %>
 
   <%= f.input :photo, as: :file %>
   <%= image_tag @recipe.photo.url(:thumb) %>
@@ -13,7 +15,7 @@
           <%= render 'ingredient_fields', :f => ingredient%>
       <% end %>
     </div>
-    <div class="links">
+    <div class="links ingredient-links">
       <%= link_to_add_association 'Add Ingredient', f, :ingredients, class: 'btn btn-default' %>
     </div>
 
@@ -23,7 +25,7 @@
           <%= render 'instruction_fields', :f => instruction%>
       <% end %>
     </div>
-    <div class="links">
+    <div class="links instruction-links">
       <%= link_to_add_association 'Add Instruction', f, :instructions, class: 'btn btn-default' %>
     </div>
 

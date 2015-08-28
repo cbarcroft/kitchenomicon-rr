@@ -1,14 +1,11 @@
 <div class="row nested-fields">
-  <div class="col-xs-4">
-    <div class="form-group">
-      <%= f.input :text, label: 'Text', input_html: { class: 'form-control' } %>
-    </div>
+  <div class="col-xs-8">
+    <%= f.input :text, as: :text, label: 'Step' %>
   </div>
   <div class="col-xs-2">
-    <div class="form-group center">
-      <%= link_to_remove_association('Delete', f) %>
-    </div>
+    <%= f.input :order, label: 'Order' %>
   </div>
-  <div class="col-xs-6">
+  <div class="col-xs-2 vcenter">
+      <%= link_to_remove_association('Delete', f) %>
   </div>
 </div>

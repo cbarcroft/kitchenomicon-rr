@@ -2,8 +2,19 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function() {
-    $('.clickable-row').click(function () {
+    $('.clickable-link-item').click(function () {
         window.location = $(this).data('url');
+    });
+
+    // Find the current highest 'order' number for instructions, and set the newly inserted step's order number to that plus one.
+    $('.instruction-links').on('cocoon:after-insert', function(e, insertedItem) {
+        var max = 0;
+        $('.recipe_instructions_order').find('input').each(function() {
+            var cur = parseInt($(this).val());
+            max = (cur > max) ? cur : max;
+        });
+
+        insertedItem.find('.recipe_instructions_order').find('input').val(max + 1)
     });
 
 })

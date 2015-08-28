@@ -4,7 +4,13 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.where(:published => true)
+  end
+
+  # GET /recipes
+  # GET /recipes.json
+  def my
+    @recipes = Recipe.where(:user_id => current_user.id).order(:title)
   end
 
   # GET /recipes/1
@@ -71,7 +77,7 @@ class RecipesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
       params.require(:recipe).permit(
-          :title, :description, :photo,
+          :title, :description, :photo, :published,
           instructions_attributes: [ :text, :order, :id, :_destroy],
           ingredients_attributes: [ :item, :amount, :unit, :text, :order, :id, :_destroy]
       )
