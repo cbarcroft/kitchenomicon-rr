@@ -33,7 +33,7 @@ gem 'cocoon'
 gem 'twitter-bootstrap-rails'
 gem 'gon'
 gem 'paperclip', '~> 4.3'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 group :production do
   gem 'pg'
