@@ -9,6 +9,9 @@
 
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @recipe.description %></dd>
+
+  <dt><strong>By:</strong></dt>
+  <dd><%= @recipe.user.email  %></dd>
 </dl>
 
 <%= image_tag @recipe.photo.url(:medium) %>
