@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150828175230) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "ingredients", force: :cascade do |t|
     t.integer "recipe_id"
     t.integer "order"
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 20150828175230) do
     t.boolean  "published",          default: true
   end
 
-  add_index "recipes", ["user_id"], name: "index_recipes_on_user_id"
+  add_index "recipes", ["user_id"], name: "index_recipes_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -58,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150828175230) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
