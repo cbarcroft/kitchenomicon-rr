@@ -1,5 +1,8 @@
 <div class="page-header">
   <h1>Recipes</h1>
+  <%= form_tag '/recipes/search/', method: :get do %>
+      <%= text_field_tag 'term', nil, { placeholder: 'Search'}%>
+  <% end%>
 </div>
 
 <!-- Recipes -->

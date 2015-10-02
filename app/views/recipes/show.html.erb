@@ -31,8 +31,27 @@
 <h3> Instructions </h3>
 <ul>
   <% @recipe.instructions.each do |instruction| %>
-      <li><%= instruction.text %></li>
+      <li><%= instruction.text %> <%= image_tag instruction.photo.url(:thumb) if instruction.photo %></li>
   <% end%>
 </ul>
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <% @recipe.instructions.each do |instruction| %>
+        <div class="swiper-slide">
+          <%= image_tag instruction.photo.url(:medium) %>
+          <%= instruction.text %>
+        </div>
+    <% end %>
+  </div>
+
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+</div>
 
 <%= link_to t('.back', :default => t("helpers.links.back")), recipes_path, :class => 'btn btn-default'  %>

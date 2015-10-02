@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :recipes do
     collection do
       get :my
+      get :search
     end
   end
   devise_for :users

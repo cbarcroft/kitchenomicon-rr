@@ -5,6 +5,10 @@
   <div class="col-xs-2">
     <%= f.input :order, label: 'Order' %>
   </div>
+  <div class="col-xs-2">
+    <%= image_tag f.object.photo.url(:thumb) if f.object.photo %>
+    <%= f.input :photo, label: 'Photo' %>
+  </div>
   <div class="col-xs-2 vcenter">
       <%= link_to_remove_association('Delete', f) %>
   </div>

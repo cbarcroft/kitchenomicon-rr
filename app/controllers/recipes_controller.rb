@@ -68,6 +68,17 @@ class RecipesController < ApplicationController
     end
   end
 
+  # GET /search
+  # GET /search.json
+  def search
+    @recipes = Recipe.search(params[:term]).where(:published => true)
+
+    respond_to do |format|
+      format.html { render :index  }
+      format.json {  }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
@@ -78,7 +89,7 @@ class RecipesController < ApplicationController
     def recipe_params
       params.require(:recipe).permit(
           :title, :description, :photo, :published,
-          instructions_attributes: [ :text, :order, :id, :_destroy],
+          instructions_attributes: [ :text, :order, :photo, :id, :_destroy],
           ingredients_attributes: [ :item, :amount, :unit, :text, :order, :id, :_destroy]
       )
     end

@@ -17,4 +17,9 @@ $(document).ready(function() {
         insertedItem.find('.recipe_instructions_order').find('input').val(max + 1)
     });
 
-})
+    varSwiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination'
+    });
+    $('.swiper-button-next').click(function(){varSwiper.slideNext()})
+    $('.swiper-button-prev').click(function(){varSwiper.slidePrev()})
+});

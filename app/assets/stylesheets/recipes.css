@@ -15,3 +15,7 @@
 .recipe-box:hover {
     background: #f6f6f6;
 }
+
+.recipe-box:active {
+    background: #E9E9E9;
+}
