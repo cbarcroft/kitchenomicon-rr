@@ -60,3 +60,19 @@ div.field, div.actions {
     vertical-align: middle;
     float: none;
 }
+
+.swiper-container {
+    height: 300px;
+}
+
+.swiper-photo {
+    float:left;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.swiper-text {
+    float:left;
+    margin-left: 5%;
+    margin-top: 15%;
+}

@@ -1,0 +1,22 @@
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <% @recipe.instructions.each do |instruction| %>
+        <div class="swiper-slide">
+          <div class="swiper-photo">
+            <%= image_tag instruction.photo.url(:medium) if instruction.photo.exists? %>
+          </div>
+          <div class="swiper-text">
+            <%= instruction.text %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+</div>
