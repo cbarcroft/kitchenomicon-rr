@@ -18,7 +18,8 @@ $(document).ready(function() {
     });
 
     varSwiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination'
+        pagination: '.swiper-pagination',
+        paginationClickable: true
     });
     $('.swiper-button-next').click(function(){varSwiper.slideNext()})
     $('.swiper-button-prev').click(function(){varSwiper.slidePrev()})

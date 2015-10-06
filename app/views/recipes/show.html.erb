@@ -31,7 +31,7 @@
 <h3> Instructions </h3>
 <ul>
   <% @recipe.instructions.each do |instruction| %>
-      <li><%= instruction.text %> <%= image_tag instruction.photo.url(:thumb) if instruction.photo.exists? %></li>
+      <li><%= image_tag instruction.photo.url(:thumb) if instruction.photo.exists? %> <%= instruction.text %></li>
   <% end%>
 </ul>
 
