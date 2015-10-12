@@ -11,7 +11,7 @@
   <dd><%= @recipe.description %></dd>
 
   <dt><strong>By:</strong></dt>
-  <dd><%= @recipe.user.email  %></dd>
+  <dd><%= @recipe.user.name  %></dd>
 </dl>
 
 <%= image_tag @recipe.photo.url(:medium) %>
