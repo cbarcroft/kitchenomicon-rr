@@ -71,15 +71,17 @@
           <%= yield %>
         </div>
         <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
+          <% if user_signed_in? %>
+              <div class="well sidebar-nav">
+                <h3>Sidebar</h3>
+                <ul class="nav nav-list">
+                  <li class="nav-header">Author</li>
+                  <% User.order_by_recipe_count.each do |user|%>
+                      <li><%= link_to "#{user.name} (#{user.recipes.size})", "/recipes/author/#{user.id}"  %></li>
+                  <% end %>
+                </ul>
+              </div><!--/.well -->
+          <% end %>
         </div><!--/span-->
       </div><!--/row-->
 

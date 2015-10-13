@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   has_many :ingredients
   accepts_nested_attributes_for :ingredients, allow_destroy: true
   has_many :instructions
