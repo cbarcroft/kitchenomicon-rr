@@ -5,6 +5,9 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipes = Recipe.where(:published => true)
+     if params[:author]
+       @recipes = @recipes.where(:user_id => params[:author])
+     end
   end
 
   # GET /recipes
