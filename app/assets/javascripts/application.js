@@ -11,10 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require cocoon
-//= require turbolinks
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts/.
