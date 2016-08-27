@@ -1,10 +1,10 @@
 <%= simple_form_for @recipe, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
   <%= f.input :title %>
-  <%= error_span(@recipe[:title]) %>
+  <%# error_span(@recipe[:title]) %>
   <%= f.input :description %>
-  <%= error_span(@recipe[:description]) %>
+  <%# error_span(@recipe[:description]) %>
   <%= f.input :published %>
-  <%= error_span(@recipe[:published]) %>
+  <%# error_span(@recipe[:published]) %>
 
   <%= f.input :photo, as: :file %>
   <%= image_tag @recipe.photo.url(:thumb) %>

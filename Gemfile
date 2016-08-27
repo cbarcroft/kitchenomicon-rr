@@ -7,13 +7,13 @@ gem 'rails', '4.2.1'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 #gem 'therubyracer', platforms: :ruby
-gem 'execjs'
+gem 'execjs', '~> 2.7.0'
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.2.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-gem 'jquery-turbolinks'
+gem 'turbolinks', '~> 5.0.1'
+gem 'jquery-turbolinks', '~> 2.1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -28,16 +28,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'devise'
-gem 'simple_form'
-gem 'cocoon'
-gem 'twitter-bootstrap-rails'
-gem 'gon'
+gem 'devise', '~> 4.2.0'
+gem 'simple_form', '~> 3.3.1'
+gem 'cocoon', '~> 1.2.9'
+gem 'twitter-bootstrap-rails', '~> 3.2.2'
+gem 'gon', '~> 6.1.0'
 gem 'paperclip', '~> 4.3'
 gem 'aws-sdk', '< 2.0'
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.18.4'
 end
 
 group :development, :test do
