@@ -77,7 +77,7 @@
                 <ul class="nav nav-list">
                   <li class="nav-header">Author</li>
                   <% User.order_by_recipe_count.each do |user|%>
-                      <li><%= link_to "#{user.name} (#{user.recipes.size})", "/recipes/?author=#{user.id}"  %></li>
+                      <li><%= link_to "#{user.name} (#{user.recipe_count})", "/recipes/?author=#{user.id}"  %></li>
                   <% end %>
                 </ul>
               </div><!--/.well -->
