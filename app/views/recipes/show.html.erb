@@ -1,6 +1,7 @@
 <%- model_class = Recipe -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+<div class="page-header" style="overflow:hidden;">
+  <h1 class="pull-left"><%= @recipe.title %></h1>
+  <%= link_to 'Edit', edit_recipe_path(@recipe), :class => 'btn btn-primary pull-right' if current_user.owns?(@recipe)  %>
 </div>
 
 <dl class="dl-horizontal">

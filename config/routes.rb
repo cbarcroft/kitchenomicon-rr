@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   end
   devise_for :users
 
+  as :user do
+    get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'    
+    put 'users' => 'devise/registrations#update', :as => 'user_registration'            
+  end
+
   root to: "recipes#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
