@@ -8,8 +8,14 @@
 }
 
 .recipe-box {
-    height: 200px;
+    height: 300px;
     padding: 10px
+}
+
+.recipe-box img{
+height: 200px;
+width: 100%;
+
 }
 
 .recipe-box:hover {

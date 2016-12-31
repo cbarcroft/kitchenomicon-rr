@@ -1,0 +1,24 @@
+.page-header{
+	text-align: center;
+}
+
+.page-header form #term {
+	width: 50%;
+}
+
+.navbar {
+	background-color: #D63124;
+}
+.navbar .navbar-brand, .navbar-default .navbar-nav>li>a {
+	color: #ffffff;
+}
+	
+
+.navbar-default .navbar-nav>.open>a {
+    background-color: #D63124;
+}
+
+.recipe-box img{
+height: 400px;
+
+}
