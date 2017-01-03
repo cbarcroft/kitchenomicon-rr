@@ -33,12 +33,18 @@
 
 <div class="instructions">
 <h3> Instructions </h3>
-<ul style="list-style-type:none;">
+<ol class="instruction-list">
   <% @recipe.instructions.each do |instruction| %>
-      <li><%= image_tag instruction.photo.url(:thumb) if instruction.photo.exists? %> <%= instruction.text %></li>
+      <li>
+          <div class="instruction-list-content">
+             <div class="instruction-image"><%= image_tag instruction.photo.url(:medium) if instruction.photo.exists? %></div>
+             <div class="instruction-text"><p><%= instruction.text %></p></div>
+          </div>
+      </li>
   <% end%>
-</ul>
+</ol>
 </div>
+
 
 <%= render 'swiper' %>
 

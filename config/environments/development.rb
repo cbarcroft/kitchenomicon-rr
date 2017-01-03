@@ -40,4 +40,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-7.0.4-Q16'
+
+  config.action_view.logger = nil
 end

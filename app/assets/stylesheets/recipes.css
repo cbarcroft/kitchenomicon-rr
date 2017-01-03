@@ -3,9 +3,10 @@
   They will automatically be included in application.css.
 */
 
-.recipe-list {
+/*.recipe-list {
     list-style-type: none;
 }
+*/
 
 .recipe-box {
     padding: 10px;
@@ -47,26 +48,59 @@
 
 
 .page-header .btn-primary:hover {
-	-webkit-transform:scale(1.02); /* Safari and Chrome */
+	 -webkit-transform:scale(1.02); /* Safari and Chrome */
    -moz-transform:scale(1.02); /* Firefox */
    -ms-transform:scale(1.02); /* IE 9 */
    -o-transform:scale(1.02); /* Opera */
     transform:scale(1.02);
 }
 
-.ingredients {
 
+.instruction-list-content {
+  display: inline-block;
+  width: 90%;
 }
 
-.instructions {
-
+.instruction-list {
+  -webkit-padding-start: 15px;
+  margin-left: 0;
+  padding-right: 0;
+  list-style-type: none;
 }
 
-.instructions li {
-	padding: 10px;
-	border: 1px solid #cdcdcd;
+.instruction-list li {
+	padding: 20px 10px;
+  counter-increment: step-counter;
 }
 
+.instruction-list li::before {
+    content: counter(step-counter);
+    margin-right: 5px;
+    font-size: 300%;
+    font-style: italic;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.instruction-text {
+
+  padding: 10px;
+  width: 60%;
+  text-align: center;
+}
+
+
+.instruction-image {
+  width: 30%;
+  padding-right: 20px;
+  display: inline-block;
+}
+
+.instructions img {
+  width: 150px;
+}
+
+/*
 .swiper-photo {
 	margin-left: 10% !important;
 	margin-top: 10%;
@@ -75,4 +109,66 @@
 .swiper-text {
 	width: 200px;
 	float: right;
+}
+
+*/
+
+@media (min-width: 1000px) {
+  .instruction-image {
+    width: 20%;
+  }
+}
+
+@media (min-width: 641px) {
+  .instruction-text {
+  position: relative;
+  display: inline-block;
+}
+
+.instruction-text p {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+}
+
+@media (max-width: 640px) {
+
+  .instruction-list li {
+    padding: 20px 0 0 0;
+  }
+
+  .instruction-list li::before {
+    display: block;
+    height: 40px;
+    width: 60%;
+    text-align: center;
+    padding-left: 35%
+  }
+
+  .instruction-list-content {
+    display: inline-block;
+    width: 90%;
+    padding-left: 10%;
+    margin: 0 auto;
+  }
+
+  .instruction-text {
+    display: inline-block;
+    text-align: center;
+    width: 90%;
+    padding: 10px;
+  }
+
+  .instruction-image {
+    width: 100%;
+  }
+
+  .instruction-image img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+  }
+
 }
