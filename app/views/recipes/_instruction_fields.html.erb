@@ -1,15 +1,16 @@
-<div class="row nested-fields">
+<div class="row nested-fields movediv">
   <div class="col-xs-8">
     <%= f.input :text, as: :text, label: 'Step' %>
-  </div>
-  <div class="col-xs-2">
-    <%= f.input :order, label: 'Order' %>
   </div>
   <div class="col-xs-2">
     <%= image_tag f.object.photo.url(:thumb) if f.object.photo %>
     <%= f.input :photo, label: 'Photo' %>
   </div>
   <div class="col-xs-2 vcenter">
-      <%= link_to_remove_association('Delete', f) %>
+    <button class="moveup" type="button"><span class="glyphicon glyphicon-arrow-up"></span></button>
+    <button class="movedown" type="button"><span class="glyphicon glyphicon-arrow-down"></span></button>
+    <%= link_to_remove_association button_tag('x', type: "button", class: "close"), f %>
+    <%= f.input :order, input_html: { class: 'order-input hidden' }, label: false %>
+    <%= f.input :id, as: :hidden %>
   </div>
 </div>

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   scope :order_by_recipe_count, -> {
     select("users.id, users.name, count(recipes.id) AS recipe_count").
     joins('LEFT JOIN recipes ON recipes.user_id = users.id').
+    where("recipes.published = ?", true).
     group("users.id").
     order("recipe_count DESC")
   }

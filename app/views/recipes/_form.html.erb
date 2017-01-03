@@ -21,13 +21,14 @@
 
     <!-- Instructions -->
     <div id="instructions">
-      <%= f.simple_fields_for :instructions do |instruction| %>
+      <%= f.simple_fields_for :instructions, :include_id => false do |instruction| %>
           <%= render 'instruction_fields', :f => instruction%>
       <% end %>
+      <div class="links instruction-links">
+        <%= link_to_add_association 'Add Instruction', f, :instructions, class: 'btn btn-default' %>
+      </div>
     </div>
-    <div class="links instruction-links">
-      <%= link_to_add_association 'Add Instruction', f, :instructions, class: 'btn btn-default' %>
-    </div>
+
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
