@@ -17,6 +17,7 @@
 
 <%= image_tag @recipe.photo.url(:medium) %>
 
+<div class="ingredients">
 <h3> Ingredients </h3>
 <ul>
     <% @recipe.ingredients.each do |ingredient| %>
@@ -28,13 +29,16 @@
        </li>
     <% end%>
 </ul>
+</div>
 
+<div class="instructions">
 <h3> Instructions </h3>
-<ul>
+<ul style="list-style-type:none;">
   <% @recipe.instructions.each do |instruction| %>
       <li><%= image_tag instruction.photo.url(:thumb) if instruction.photo.exists? %> <%= instruction.text %></li>
   <% end%>
 </ul>
+</div>
 
 <%= render 'swiper' %>
 
