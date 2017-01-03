@@ -5,6 +5,6 @@ class Ingredient < ActiveRecord::Base
   validate :amount_is_numeric_or_fraction
  
   def amount_is_numeric_or_fraction
-    errors.add(:amount, "is not a number or fraction.") unless ((amount =~ /\d\/\d/) || (amount !~ /\D/) || amount.blank?)
+    errors.add(:amount, "is not a number or fraction.") unless ((amount =~ /\d\/\d/) || (amount =~ /^[0-9-]*$/) || amount.blank?)
   end
 end
