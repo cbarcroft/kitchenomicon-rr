@@ -22,7 +22,7 @@
 <ul>
     <% @recipe.ingredients.each do |ingredient| %>
        <li>
-         <%= ingredient.amount %>
+         <%= (ingredient.amount.include? "/") ? numeric_to_mixed_number(Rational(ingredient.amount)) : ingredient.amount %>
          <%= ingredient.unit %>
          <%= ingredient.item %>
          <%= "(#{ingredient.text})" if !ingredient.text.blank? %>

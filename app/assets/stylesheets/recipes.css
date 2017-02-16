@@ -3,10 +3,10 @@
   They will automatically be included in application.css.
 */
 
-/*.recipe-list {
+.recipe-list {
     list-style-type: none;
 }
-*/
+
 
 .recipe-box {
     padding: 10px;
@@ -171,4 +171,17 @@
     margin: 0 auto;
   }
 
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+#ingredients {
+  margin: 3%;
+}
+
+#instructions {
+  margin: 3%;
 }
