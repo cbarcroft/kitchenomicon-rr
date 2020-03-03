@@ -1,5 +1,7 @@
-<li class="col-md-4 recipe-box clickable-link-item" data-url="<%= recipe_path(recipe) %>">
-        <%= image_tag(recipe.photo.url(:thumb)) %>
-        <h4><%= recipe.title %></h4>
-        <%= truncate(recipe.description, :length => 50) %>
+<li class="col-md-4 col-xs-6 recipe-box clickable-link-item" data-url="<%= recipe_path(recipe) %>">
+        <%= image_tag(recipe.photo.url(:medium)) %>
+        <div class="recipe-content">
+        	<h4><%= recipe.title %></h4>
+       		<%= truncate(recipe.description, :length => 50) %>
+        </div>
 </li>

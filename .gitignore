@@ -17,5 +17,7 @@
 /tmp
 
 .idea
+.byebug_history
 
 public/system/recipes
+public/system/instructions
