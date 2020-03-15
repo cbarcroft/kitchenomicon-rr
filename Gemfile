@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'devise', '~> 4.2.0'
+gem 'devise', '~> 4.4.0'
 gem 'simple_form', '~> 3.3.1'
 gem 'cocoon', '~> 1.2.9'
 gem 'twitter-bootstrap-rails', '~> 3.2.2'
